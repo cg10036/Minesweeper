@@ -13,6 +13,14 @@ public class Engine {
 		renew(x, y, num);
 	}
 	
+	public Block[][] getBlocks() {
+		return block;
+	}
+	
+	public boolean isMined(int x, int y) {
+		return block[y][x].isMined();
+	}
+	
 	private void renew(int x, int y, int num) {
 		block = new Block[y][x];
 		size = new Pair(x, y);
