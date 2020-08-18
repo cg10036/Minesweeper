@@ -13,6 +13,11 @@ public class Minesweeper {
 		System.out.print("Input mine num: ");
 		num = scanner.nextInt();
 		
+		System.out.println("LeftClick: Mine");
+		System.out.println("RightClick: Set Flag");
+		System.out.println("MiddleClick: Mine ALL");
+		System.out.println("Good Luck :)");
+		
 //		Engine engine = new Engine(x, y, num);
 		
 		Gui gui = new Gui(x, y, num);

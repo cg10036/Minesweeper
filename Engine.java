@@ -40,6 +40,10 @@ public class Engine {
 		}
 	}
 	
+	public int getNum(int x, int y) {
+		return block[y][x].getNum();
+	}
+	
 	public boolean isAllMined() {
 		if(size.first() * size.second() - mined_cnt == bomb_num) {
 			return true;
@@ -56,7 +60,18 @@ public class Engine {
 		}
 	}
 	
+	public boolean isFlag(int x, int y) {
+		return block[y][x].isFlag();
+	}
+	
+	public void setFlag(int x, int y, boolean flag) {
+		block[y][x].setFlag(flag);
+	}
+	
 	public boolean mine(int _x, int _y) {
+		if(block[_y][_x].isFlag()) {
+			return false;
+		}
 		if(block[_y][_x].isBomb()) {
 			if(isFirst) {
 				renew(size.first(), size.second(), bomb_num);

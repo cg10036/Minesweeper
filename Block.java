@@ -2,10 +2,19 @@
 public class Block implements Bomb {
 	private boolean bomb;
 	private boolean mined = false;
+	private boolean flag = false;
 	private int num;
 	
 	public Block(boolean bomb) {
 		this.bomb = bomb;
+	}
+	
+	public boolean isFlag() {
+		return flag;
+	}
+	
+	public void setFlag(boolean flag) {
+		this.flag = flag;
 	}
 	
 	public boolean isMined() {
