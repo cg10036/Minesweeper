@@ -16,7 +16,7 @@ public class Gui{
 		for(int i = 0;i < y;i++) {
 			for(int j = 0;j < x;j++) {
 				if(engine.isFlag(j, i)) {
-					bt[i * x + j].setText("▲");
+					bt[i * x + j].setText("#");
 				} else if(engine.isMined(j, i)) {
 					bt[i * x + j].setText("" + engine.getNum(j, i));
 					bt[i * x + j].setEnabled(false);
@@ -41,7 +41,7 @@ public class Gui{
 						engine.mine(j, i);
 						bt[i * x + j].setText("" + block[i][j].getNum());
 					} else {
-						bt[i * x + j].setText("⬤");
+						bt[i * x + j].setText("*");
 					}
 				}
 			}
@@ -56,7 +56,7 @@ public class Gui{
 					if(engine.isMined(j, i)) {
 						bt[i * x + j].setText("" + block[i][j].getNum());
 					} else {
-						bt[i * x + j].setText("◯");
+						bt[i * x + j].setText("*");
 					}
 				}
 			}
@@ -79,7 +79,7 @@ public class Gui{
 		for(int i = 0;i < bt.length;i++) {
 			bt[i] = new JButton();
 			bt[i].setName("" + i);
-			bt[i].setPreferredSize(new Dimension(30, 30));
+			bt[i].setPreferredSize(new Dimension(45, 45));
 			bt[i].addMouseListener(new MouseAdapter() {
 				@Override
 				public void mousePressed(MouseEvent e) {
@@ -143,7 +143,7 @@ public class Gui{
 		}
 		//bt[0].setEnabled(false);
 		fr.setContentPane(pn);
-		fr.setSize(35 * x, 35 * y + 25);
+		fr.setSize(52 * x, 52 * y + 25);
 		fr.setVisible(true);
 		fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
